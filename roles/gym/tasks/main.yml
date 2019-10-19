@@ -39,6 +39,11 @@
 #     name: PyBullet
 #     extra_args: -U --no-cache-dir
 
+- name: Install gym dependency
+  apt:
+    state: present
+    name: python3-setuptools
+
 - name: Install OpenAI gym
   pip:
     state: latest
