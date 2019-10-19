@@ -5,10 +5,13 @@
     state: latest
     name: software-properties-common
 
-- name: Add repository
+- name: ubuntu | ensuring Ubuntu universe repo is enabled ({{ ansible_distribution_version }} >= 16.04)
   apt_repository:
-    repo: universe
+    repo: "deb http://us.archive.ubuntu.com/ubuntu bionic universe"
     update_cache: yes
+    state: present
+    validate_certs: no
+
 
 - name: install pip
   apt:
