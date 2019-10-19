@@ -31,7 +31,7 @@
     - python-qt4-gl 
     - libgle3 
     - python-dev
-    - python-setuptools
+    - python3-setuptools
 
 - name: Install PyBullet
   pip:
