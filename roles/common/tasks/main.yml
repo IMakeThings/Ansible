@@ -1,0 +1,21 @@
+---
+
+- name: install pip
+  apt:
+    state: latest
+    name: python-pip
+
+- name: install pip3
+  apt:
+    state: latest
+    name: python3-pip
+
+- name: Install Python development library
+  apt:
+    state: latest
+    name: python3-dev
+
+- name: Install git
+  apt:
+    state: latest
+    name: git

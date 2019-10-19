@@ -1,0 +1,19 @@
+---
+# tasks file for package-installer
+
+- name: Add specified repositories into sources list using specified filename
+  apt_repository:
+    repo: deb {{ item.repo }} {{ item.add }}
+    state: present
+    filename: "{{ item.name }}"
+  with_items:
+    - "{{ my_pkgs }}"
+
+- name: Install specified packages
+  apt:
+    name: "{{ item.name }}"
+    state: present
+    update_cache: yes
+    allow_unauthenticated: yes
+  with_items:
+    - "{{ my_pkgs }}"

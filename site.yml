@@ -1,0 +1,17 @@
+- name: Install features common to all environments
+  hosts: all
+  become: true
+  remote_user: root
+  connection: local
+
+  roles:
+    - common
+
+- name: Install the gym environment for all gym-dev users
+  hosts: gym-dev
+  become: true
+  remote_user: root
+  connection: local
+
+  roles:
+    - gym

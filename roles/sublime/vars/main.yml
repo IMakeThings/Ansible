@@ -1,0 +1,8 @@
+---
+# vars file for sublime
+
+my_pkgs:
+  - sublime:
+    repo: https://download.sublimetext.com/
+    add: apt/stable/
+    name: sublime-text
