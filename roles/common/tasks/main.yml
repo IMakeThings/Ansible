@@ -1,5 +1,15 @@
 ---
 
+- name: Install common software properties
+  apt:
+    state: latest
+    name: software-properties-common
+
+- name: Add repository
+  apt_repository:
+    repo: universe
+    update_cache: yes
+
 - name: install pip
   apt:
     state: latest
